@@ -4,6 +4,7 @@
 
 #define NB_MIN 1
 #define NB_MAX 100
+#define NB_SECRET_MAX 50
 
 
 
@@ -65,12 +66,40 @@ int jouer(int secret) {
   return essais;
 }
 
+// Structure score
+typedef struct {
+  char nom[NB_SECRET_MAX];
+  int nb_essais;
+} score_t;
+
+// PRE: score != NULL
+// POST: demande le nom du joueur et initialise son score
+void init_score(score_t *score) {
+  printf("Quel est ton nom : ");
+  scanf("%s", score->nom); // nom du joueur
+  score->nb_essais = 0;  // nb_esssais = 0
+}
+
+// PRE: score != NULL
+// POST: affiche le score du joueur
+void afficher_score(score_t *score) {
+  printf("Joueur : %s\n", score->nom); // affiche le nom du joueur
+  printf("Essais : %d\n", score->nb_essais); // affiche le nombre essais
+}
 
 int main(void) {
-  // Test - affiche le nombre secret
-  // On genere une fois dans main
+  // Initialise le score
+  score_t score;
+  init_score(&score);
+
+  // Generer le nombre secret
   int secret = generate_nombre();
-  // on passe le meme nombre a jouer()
-  jouer(secret);
+
+  // Jouer et sauvegarde le score
+  score.nb_essais = jouer(secret);
+
+  // Affiche le score final
+  afficher_score(&score);
+
   return 0;
 }
