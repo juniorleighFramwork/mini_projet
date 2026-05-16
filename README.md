@@ -5,7 +5,7 @@ Mini projets C (Exercices Pratique BA1)
 Petits projets pratique pour renforcer mes competences en C.
 
 ## Projets
-- [] jeu de devinette
+- [x] jeu de devinette
 - [] Pierre Feuille Ciseaux
 
 ## Compilation
