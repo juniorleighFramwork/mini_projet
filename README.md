@@ -5,8 +5,8 @@ Mini projets C (Exercices Pratique BA1)
 Petits projets pratique pour renforcer mes competences en C.
 
 ## Projets
-- [x] jeu de devinette
-- [] Pierre Feuille Ciseaux
+- [X] jeu de devinette
+- [X] Pierre Feuille Ciseaux
 
 ## Compilation
 ```bash
